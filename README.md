@@ -6,4 +6,4 @@ django Channels (with Daphne): https://channels.readthedocs.io/en/latest/introdu
 
 set up py virtual environment and install these with pip
 
-in root folder run py manage.py runserver
+in morningsunshine folder run py manage.py runserver
