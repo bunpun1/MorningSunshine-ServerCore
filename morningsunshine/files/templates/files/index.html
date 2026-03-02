@@ -1,0 +1,7 @@
+<form action="{% url 'files:upload' %}" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <button type="submit">upload file?</button>
+</form>
+<p><a href="{% url 'profile' %}">View profile</a></p>
+<p><a href="{% url 'board:forums' %}">board</a></p>
+<p>this will be where files are fr</p>

@@ -25,4 +25,6 @@ urlpatterns = [
     path("", TemplateView.as_view(template_name="home.html"), name="home"),
     path("audiovideochat/", include("audiovideochat.urls"), name="vc"),
     path("board/", include("board.urls"), name="board"),
+    path("files/", include("files.urls"), name="files"),
+    path("xmpp/", include("xmpp.urls"), name="xmpp"),
 ]

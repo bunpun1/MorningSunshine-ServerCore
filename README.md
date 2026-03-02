@@ -1,8 +1,16 @@
 Dependencies:
 
-django-ftpserver: https://django-ftpserver.readthedocs.io/en/latest/overview.html#features
+django-storages (sftp): https://django-storages.readthedocs.io/en/latest/backends/sftp.html
 
-django-xmpp: https://github.com/fpytloun/django-xmpp
+slixmpp - for this you also need a rust compiler which sucks but whatever. use rustup. make sure you install the c++ dependencies or it won't work
+
+dnspython
+
+pyasn1
+
+pyasn1_modules
+
+django-gravatar2
 
 django Channels (with Daphne): https://channels.readthedocs.io/en/latest/introduction.html#turtles-all-the-way-down
 

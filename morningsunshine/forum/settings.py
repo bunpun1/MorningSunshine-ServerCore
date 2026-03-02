@@ -27,6 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+XMPP_DOMAIN = 'localhost'
+XMPP_BOSH_SERVICE_URL = 'https://xmpp.example.com:5280/http-bind'
+
 
 # Application definition
 
@@ -35,12 +38,16 @@ INSTALLED_APPS = [
     'channels',
     'board',
     'audiovideochat',
+    'files',
+    'xmpp',
+    'django_gravatar',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
     'accounts',
 ]
 
@@ -70,6 +77,22 @@ TEMPLATES = [
         },
     },
 ]
+
+MEDIA_DIR = 'media'
+MEDIA_URL = '/media/'
+STATIC_URL = '/static/'
+
+STORAGES = {
+    "default": {
+        "BACKEND": "storages.backends.sftpstorage.SFTPStorage",
+        "OPTIONS": {
+          'host': 'localhost'
+        },
+    },
+    'staticfiles': {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+    },
+}
 
 WSGI_APPLICATION = 'forum.wsgi.application'
 ASGI_APPLICATION = "forum.asgi.application"
@@ -119,8 +142,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/dev/howto/static-files/
-
-STATIC_URL = 'static/'
 
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
